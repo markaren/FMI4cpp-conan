@@ -3,12 +3,12 @@ from conans import ConanFile, CMake, tools
 
 class Fmi4cppConan(ConanFile):
     name = "FMI4cpp"
-    version = "0.6.0"
+    version = "0.6.1"
     license = "MIT"
     author = "Lars Ivar Hatledal larsivarhatledal@gmail.com"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of Fmi4cpp here>"
-    topics = ("<Put some tag here>", "<here>", "<and here>")
+    url = "https://github.com/NTNU-IHB/FMI4cpp"
+    description = "FMI 2.0 implementation written in modern C++"
+    topics = ("FMI", "co-simulation", "model exchange")
     settings = "os", "compiler", "build_type", "arch"
     options = {
         "shared": [True, False],
@@ -30,7 +30,7 @@ class Fmi4cppConan(ConanFile):
        
     def source(self):
         self.run("git clone https://github.com/NTNU-IHB/FMI4cpp.git")
-        self.run("cd FMI4cpp && git checkout v0.6.0")
+        self.run("cd FMI4cpp && git checkout v" + self.version)
 
     def build(self):
         cmake = CMake(self)
