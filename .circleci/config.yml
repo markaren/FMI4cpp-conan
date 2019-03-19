@@ -32,5 +32,9 @@ jobs:
           command: 'cd test_package && cmake -H. -Bbuild -DCMAKE_BUILD_TYPE=Debug'
 
       - run:
-          name: Conan install
+          name: Building
           command: 'cd test_package && cmake --build build'
+
+      - run:
+          name: Test
+          command: 'cd test_package/build/bin && ctest'
