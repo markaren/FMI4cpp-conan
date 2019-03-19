@@ -1,9 +1,11 @@
 
 #include <fmi4cpp/fmi4cpp.hpp>
 
+using namespace std;
 using namespace fmi4cpp::fmi2;
 
 int main() {
+
     auto fmuFile = "ControlledTemperature.fmu";
     auto fmu = fmi2Fmu(fmuFile).asCoSimulationFmu();
 
@@ -11,8 +13,9 @@ int main() {
     slave->setupExperiment();
     slave->enterInitializationMode();
     slave->exitInitializationMode();
-    while (slave->getSimulationTime() <= 1.0) {
-        slave->doStep(1e-3);
-    }
+    slave->doStep(1e-3);
     slave->terminate();
+
+    return 0;
+
 }
