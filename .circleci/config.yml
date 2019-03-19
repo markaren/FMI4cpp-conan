@@ -26,3 +26,11 @@ jobs:
       - run:
           name: Conan install
           command: 'cd test_package && conan install . -s build_type=Debug -s compiler.libcxx=libstdc++11 --install-folder=build --build FMI4cpp'
+
+      - run:
+          name: Configuring
+          command: 'cd test_package && cmake -H. -Bbuild -DCMAKE_BUILD_TYPE=Debug'
+
+      - run:
+          name: Conan install
+          command: 'cd test_package && cmake --build build'
