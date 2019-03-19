@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\LarsIvar\Documents\IdeaProjects\FMI4cpp-conan\test_package\example.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\LarsIvar\Documents\IdeaProjects\FMI4cpp-conan\test_package\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{DE10E7DE-C966-34BA-B93F-C45B3BE09C56}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
