@@ -17,9 +17,10 @@ class Fmi4cppTestConan(ConanFile):
         cmake.build()
 
     def imports(self):
-        self.copy("*.dll", dst="bin", src="bin")
-        self.copy("*.dylib*", dst="bin", src="lib")
-        self.copy('*.so*', dst='bin', src='lib')
+        self.copy("*.dll", dst="bin", keep_path=False)
+        self.copy("*.pdb", dst="bin", keep_path=False)
+        self.copy("*.dylib*", dst="bin", keep_path=False)
+        self.copy('*.so*', dst='bin', keep_path=False)
 
     def test(self):
         if not tools.cross_building(self.settings):
