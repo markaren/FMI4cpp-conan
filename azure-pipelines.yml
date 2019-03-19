@@ -39,5 +39,5 @@ jobs:
       - task: Bash@3
         inputs:
           script: 'ctest -C Debug'
-          workingDirectory: '$(system.defaultWorkingDirectory)/test_package/build/bin'
+          workingDirectory: '$(system.defaultWorkingDirectory)/test_package/build'
           targetType: inline
