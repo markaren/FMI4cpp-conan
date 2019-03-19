@@ -7,6 +7,10 @@ class Fmi4cppTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
 
+    requires = (
+        "FMI4cpp/0.6.0@FMI4cpp/testing"
+    )
+
     def build(self):
         cmake = CMake(self)
         # Current dir is "test_package/build/<build_id>" and CMakeLists.txt is
