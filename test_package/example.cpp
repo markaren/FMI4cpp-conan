@@ -7,13 +7,13 @@ using namespace fmi4cpp::fmi2;
 int main() {
 
     auto fmuFile = "ControlledTemperature.fmu";
-    auto fmu = fmi2Fmu(fmuFile).asCoSimulationFmu();
+    auto fmu = fmu(fmuFile).as_cs_fmu();
 
-    auto slave = fmu->newInstance();
-    slave->setupExperiment();
-    slave->enterInitializationMode();
-    slave->exitInitializationMode();
-    slave->doStep(1e-3);
+    auto slave = fmu->new_instance();
+    slave->setup_experiment();
+    slave->enter_initialization_mode();
+    slave->exit_initialization_mode();
+    slave->step(1e-3);
     slave->terminate();
 
     return 0;
