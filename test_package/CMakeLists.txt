@@ -12,7 +12,7 @@ endif()
 find_package(FMI4cpp CONFIG REQUIRED)
 
 add_executable(example example.cpp)
-target_link_libraries(example FMI4cpp::FMI4cpp)
+target_link_libraries(example fmi4cpp::fmi4cpp)
 
 file(COPY ControlledTemperature.fmu DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
 

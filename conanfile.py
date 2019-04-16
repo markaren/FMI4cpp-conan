@@ -3,7 +3,7 @@ from conans import ConanFile, CMake, tools
 
 class Fmi4cppConan(ConanFile):
     name = "FMI4cpp"
-    version = "0.6.1"
+    version = "0.7.0-RC2"
     license = "MIT"
     author = "Lars Ivar Hatledal larsivarhatledal@gmail.com"
     url = "https://github.com/NTNU-IHB/FMI4cpp"
@@ -24,8 +24,7 @@ class Fmi4cppConan(ConanFile):
 
     requires = (
         "boost/1.66.0@conan/stable",
-        "libzip/1.5.1@bincrafters/stable",
-        "spdlog/1.3.1@bincrafters/stable"
+        "libzip/1.5.1@bincrafters/stable"
     )
        
     def source(self):
