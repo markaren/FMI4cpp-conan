@@ -37,4 +37,4 @@ jobs:
 
       - run:
           name: Test
-          command: 'cd test_package/build/bin && ctest'
+          command: 'cd test_package/build && ctest'
