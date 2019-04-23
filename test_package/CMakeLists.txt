@@ -17,6 +17,4 @@ target_link_libraries(example fmi4cpp::fmi4cpp)
 file(COPY ControlledTemperature.fmu DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
 
 enable_testing()
-add_test(NAME example
-      WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin
-      COMMAND example)
+add_test(NAME example COMMAND example)
