@@ -18,3 +18,5 @@ file(COPY ControlledTemperature.fmu DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
 
 enable_testing()
 add_test(NAME example COMMAND example)
+
+file(COPY ${CMAKE_CURRENT_BINARY_DIR}/CTestTestfile.cmake DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)

@@ -16,13 +16,13 @@ jobs:
           script: |
             pip install conan --upgrade
             conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
-            conan create . FMI4cpp/testing
+            conan create . markaren/testing
           workingDirectory: '$(system.defaultWorkingDirectory)'
           targetType: inline
 
       - task: Bash@3
         inputs:
-          script: conan install . -s build_type=Debug --install-folder=build --build FMI4cpp
+          script: conan install . -s build_type=Debug --install-folder=build --build fmi4cpp
           workingDirectory: '$(system.defaultWorkingDirectory)/test_package'
           targetType: inline
       
@@ -39,5 +39,5 @@ jobs:
       - task: Bash@3
         inputs:
           script: 'ctest -C Debug'
-          workingDirectory: '$(system.defaultWorkingDirectory)/test_package/build'
+          workingDirectory: '$(system.defaultWorkingDirectory)/test_package/build/bin'
           targetType: inline
