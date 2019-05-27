@@ -9,7 +9,7 @@ else()
     message(FATAL_ERROR "The file conanbuildinfo.cmake doesn't exist, you have to run conan install first!")
 endif()
 
-find_package(FMI4cpp CONFIG REQUIRED)
+find_package(fmi4cpp 0.7.0 CONFIG REQUIRED)
 
 add_executable(example example.cpp)
 target_link_libraries(example fmi4cpp::fmi4cpp)

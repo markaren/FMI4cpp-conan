@@ -16,7 +16,7 @@ jobs:
 
       - run:
           name: Conan create
-          command: 'conan create . FMI4cpp/testing'
+          command: 'conan create . markaren/testing'
 
       - save_cache:
           paths:
@@ -25,7 +25,7 @@ jobs:
 
       - run:
           name: Conan install
-          command: 'cd test_package && conan install . -s build_type=Debug -s compiler.libcxx=libstdc++11 --install-folder=build --build FMI4cpp'
+          command: 'cd test_package && conan install . -s build_type=Debug -s compiler.libcxx=libstdc++11 --install-folder=build --build fmi4cpp'
 
       - run:
           name: Configuring

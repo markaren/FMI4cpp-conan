@@ -8,7 +8,7 @@ class Fmi4cppTestConan(ConanFile):
     generators = "cmake"
 
     requires = (
-        "FMI4cpp/0.7.0-RC2@FMI4cpp/testing"
+        "fmi4cpp/0.7.0@markaren/testing"
     )
 
     def build(self):
