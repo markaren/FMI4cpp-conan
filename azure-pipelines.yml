@@ -36,8 +36,8 @@ jobs:
           workingDirectory: '$(system.defaultWorkingDirectory)/test_package/build'
           cmakeArgs: '--build .'
 
-#      - task: Bash@3
-#        inputs:
-#          script: 'ctest -C Debug'
-#          workingDirectory: '$(system.defaultWorkingDirectory)/test_package/build'
-#          targetType: inline
+      - task: Bash@3
+        inputs:
+          script: 'ctest -C Debug'
+          workingDirectory: '$(system.defaultWorkingDirectory)/test_package/build'
+          targetType: inline

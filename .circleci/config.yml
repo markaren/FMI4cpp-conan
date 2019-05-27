@@ -35,6 +35,6 @@ jobs:
           name: Building
           command: 'cd test_package && cmake --build build'
 
-#      - run:
-#          name: Test
-#          command: 'cd test_package/build && ctest'
+      - run:
+          name: Test
+          command: 'cd test_package/build && ctest'
