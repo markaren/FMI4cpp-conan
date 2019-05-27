@@ -3,7 +3,7 @@ from conans import ConanFile, CMake, tools
 
 class Fmi4cppConan(ConanFile):
     name = "FMI4cpp"
-    version = "0.7.0-RC2"
+    version = "0.7.0"
     license = "MIT"
     author = "Lars Ivar Hatledal larsivarhatledal@gmail.com"
     url = "https://github.com/NTNU-IHB/FMI4cpp"
