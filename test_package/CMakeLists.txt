@@ -15,6 +15,7 @@ add_executable(example example.cpp)
 target_link_libraries(example fmi4cpp::fmi4cpp)
 
 file(COPY ControlledTemperature.fmu DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ControlledTemperature.fmu DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
 
 enable_testing()
 add_test(NAME example COMMAND example)
