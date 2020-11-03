@@ -9,6 +9,12 @@ else()
     message(FATAL_ERROR "The file conanbuildinfo.cmake doesn't exist, you have to run conan install first!")
 endif()
 
+if (MSVC)
+    add_definitions("-DNOMINMAX" "-D_CRT_SECURE_NO_WARNINGS")
+    add_compile_options(/wd4996) # suppress warning appearing in boost headers under MSVC.
+    #https://docs.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4996?view=vs-2017
+endif ()
+
 find_package(fmi4cpp CONFIG REQUIRED)
 
 add_executable(example example.cpp)

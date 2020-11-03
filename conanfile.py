@@ -3,7 +3,7 @@ from conans import ConanFile, CMake, tools
 
 class Fmi4cppConan(ConanFile):
     name = "fmi4cpp"
-    version = "0.7.0"
+    version = "0.8.0-ALPHA"
     license = "MIT"
     author = "Lars Ivar Hatledal larsivarhatledal@gmail.com"
     url = "https://github.com/NTNU-IHB/FMI4cpp"
@@ -11,20 +11,19 @@ class Fmi4cppConan(ConanFile):
     topics = ("FMI", "co-simulation", "model exchange")
     settings = "os", "compiler", "build_type", "arch"
     options = {
-        "shared": [True, False],
-        "curl": [True, False]
+        "shared": [True, False]
     }
     default_options = (
         "shared=True",
-        "curl=False",
-        "boost:shared=True",
-        "libzip:shared=True"
+        "boost:shared=True"
     )
     generators = "cmake"
 
     requires = (
         "boost/1.66.0@conan/stable",
-        "libzip/1.5.1@bincrafters/stable"
+        "libzip/1.5.2@bincrafters/stable",
+        "bzip2/1.0.8",
+        "zlib/1.2.11"
     )
        
     def source(self):
@@ -38,8 +37,6 @@ class Fmi4cppConan(ConanFile):
             "FMI4CPP_USING_CONAN": "ON",
             "FMI4CPP_BUILD_TESTS": "OFF",
             "FMI4CPP_BUILD_EXAMPLES": "OFF",
-            "FMI4CPP_BUILD_TOOL": "OFF",
-            "FMI4CPP_WITH_CURL": "ON" if self.options.curl else "OFF"
         })
         cmake.build()
         cmake.install()
